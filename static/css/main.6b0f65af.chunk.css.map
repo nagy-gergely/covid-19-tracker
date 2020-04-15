@@ -1,0 +1,1 @@
+{"version":3,"sources":["Card.css"],"names":[],"mappings":"AAAA,eACI,gBACJ,CAEA,YACI,UACJ","file":"main.6b0f65af.chunk.css","sourcesContent":[".min-height-15 {\r\n    min-height: 10rem;\r\n}\r\n\r\n.white-text {\r\n    color: white;\r\n}"]}
