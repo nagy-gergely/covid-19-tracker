@@ -17,12 +17,12 @@ function App() {
             <Navbar />
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-xl-6">
                             <div className="h3">Total Cases</div>
                             <Cards total/>
                             <TotalChart />
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-xl-6">
                             <div className="h3">Cases in { country }</div>
                             <Cards />
                             <CountryChart />

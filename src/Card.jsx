@@ -3,7 +3,7 @@ import './Card.css';
 
 function Card ({ value, text, bgColorClass }) {
     return (
-        <div className={ 'col col-md-3 min-height-15 rounded ' + bgColorClass } >
+        <div className={ 'col col-lg-3 min-height-15 rounded ' + bgColorClass } >
             <div className="row align-items-center justify-content-center  h-50">
                 <div className="h1 white-text">
                     { value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") }
