@@ -4,6 +4,7 @@ import { CountryContext } from './context/CountryContext';
 
 import Navbar from './Navbar';
 import LastUpdate from './LastUpdate';
+import Sources from './Sources';
 import Cards from './Cards';
 import CountryChart from './CountryChart';
 import TotalChart from './TotalChart';
@@ -29,6 +30,7 @@ function App() {
                     </div>
                     <div className="row">
                         <LastUpdate />
+                        <Sources />
                     </div>
                 </div>
         </React.Fragment>

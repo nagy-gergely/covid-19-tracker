@@ -17,7 +17,7 @@ function LastUpdate() {
     }, []);
 
     return (
-        <div className="col col-md-12 mt-3">
+        <div className="col col-md-6 mt-3">
             Last Update: { lastUpdate.toLocaleString() }
         </div>
     );
