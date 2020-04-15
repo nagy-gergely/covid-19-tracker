@@ -1,11 +1,20 @@
 import React from 'react';
-import './App.css';
+
+import CountryProvider from './context/CountryContext';
+
+import CountryPicker from './CountryPicker';
+import Cards from './Cards';
+import Chart from './Chart';
 
 function App() {
     return (
-        <div>
-        
-        </div>
+        <CountryProvider>
+            <div className="container">
+                <CountryPicker />
+                <Cards />
+                <Chart />
+            </div>
+        </CountryProvider>
     );
 }
 
