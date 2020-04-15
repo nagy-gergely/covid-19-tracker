@@ -15,7 +15,6 @@ function TotalChart() {
     useEffect(() => {
         axios.get('https://covid19.mathdro.id/api/daily')
             .then((response) => {
-                console.log(response);
                 let newData = [...data];
                 if(response.data && Array.isArray(response.data)) {
                     response.data.forEach(({ reportDate, confirmed, deaths }) => {
