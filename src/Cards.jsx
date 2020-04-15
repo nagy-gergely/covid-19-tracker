@@ -5,7 +5,7 @@ import { CountryContext } from './context/CountryContext';
 
 import Card from './Card';
 
-function Cards() {
+function Cards({ total }) {
     const { country } = useContext(CountryContext);
 
     const [confirmed, setConfirmed] = useState(0);
@@ -13,7 +13,7 @@ function Cards() {
     const [deaths, setDeaths] = useState(0);
 
     useEffect(() => {
-        if(country) {
+        if(country && !total) {
             axios.get(`https://covid19.mathdro.id/api/countries/${country}/confirmed`)
                 .then((response) => {
                     if(response.data && Array.isArray(response.data)) {
