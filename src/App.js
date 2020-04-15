@@ -3,7 +3,9 @@ import React, { useContext } from 'react';
 import { CountryContext } from './context/CountryContext';
 
 import Navbar from './Navbar';
+import LastUpdate from './LastUpdate';
 import Cards from './Cards';
+import CountryChart from './CountryChart';
 import TotalChart from './TotalChart';
 
 function App() {
@@ -22,8 +24,11 @@ function App() {
                         <div className="col-md-6">
                             <div className="h3">Cases in { country }</div>
                             <Cards />
-                            <TotalChart />
+                            <CountryChart />
                         </div>
+                    </div>
+                    <div className="row">
+                        <LastUpdate />
                     </div>
                 </div>
         </React.Fragment>
