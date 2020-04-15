@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const CountryContext = React.createContext('hungary');
+export const CountryContext = React.createContext();
 
 function CountryProvider({ children }) {
     const [availableCountreis, setAvailableCountreis] = useState([]);
-    const [country, setCountry] = useState('Hungary');
+    const [country, setCountry] = useState();
 
     useEffect(() => {
         axios.get('https://covid19.mathdro.id/api/countries')

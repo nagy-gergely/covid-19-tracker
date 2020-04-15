@@ -2,19 +2,23 @@ import React from 'react';
 
 import CountryProvider from './context/CountryContext';
 
+import Navbar from './Navbar';
 import CountryPicker from './CountryPicker';
 import Cards from './Cards';
 import Chart from './Chart';
 
 function App() {
     return (
-        <CountryProvider>
+        <React.Fragment>
+            <Navbar />
             <div className="container">
-                <CountryPicker />
-                <Cards />
-                <Chart />
+                <CountryProvider>
+                    <CountryPicker />
+                    <Cards />
+                    <Chart />
+                </CountryProvider>
             </div>
-        </CountryProvider>
+        </React.Fragment>
     );
 }
 

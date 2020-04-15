@@ -13,31 +13,45 @@ function Cards() {
     const [deaths, setDeaths] = useState(0);
 
     useEffect(() => {
-        axios.get(`https://covid19.mathdro.id/api/countries/${country}/confirmed`)
-            .then((response) => {
-                if(response.data && Array.isArray(response.data)) {
-                    let confirmed = 0;
-                    let recovered = 0;
-                    let deaths = 0;
-                    response.data.forEach((item) => {
-                        confirmed += item.confirmed;
-                        recovered += item.recovered;
-                        deaths += item.deaths
-                    });
-                    setConfirmed(confirmed);
-                    setRecovered(recovered);
-                    setDeaths(deaths);
-                }
-            }).catch((err) => {
-                console.error(err.message);
-            })
+        if(country) {
+            axios.get(`https://covid19.mathdro.id/api/countries/${country}/confirmed`)
+                .then((response) => {
+                    if(response.data && Array.isArray(response.data)) {
+                        let confirmed = 0;
+                        let recovered = 0;
+                        let deaths = 0;
+                        response.data.forEach((item) => {
+                            confirmed += item.confirmed;
+                            recovered += item.recovered;
+                            deaths += item.deaths
+                        });
+                        setConfirmed(confirmed);
+                        setRecovered(recovered);
+                        setDeaths(deaths);
+                    }
+                }).catch((err) => {
+                    console.error(err.message);
+                })
+        } else {
+            axios.get('https://covid19.mathdro.id/api')
+                .then((response) => {
+                    if(response.data) {
+                        setConfirmed(response.data.confirmed.value);
+                        setRecovered(response.data.recovered.value);
+                        setDeaths(response.data.deaths.value);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                })
+        }
     }, [country]);
 
     return (
-        <div className="row justify-content-around">
-            <Card value={ confirmed } text="Fertőzött" bgColorClass="bg-danger" />
-            <Card value={ recovered } text="Gyógyult" bgColorClass="bg-success" />
-            <Card value={ deaths } text="Halott" bgColorClass="bg-dark" />
+        <div className="row justify-content-around mt-3">
+            <Card value={ confirmed } text="Confirmed" bgColorClass="bg-danger" />
+            <Card value={ recovered } text="Recovered" bgColorClass="bg-success" />
+            <Card value={ deaths } text="Deaths" bgColorClass="bg-dark" />
         </div>
     );
 }

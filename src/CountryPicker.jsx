@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { CountryContext } from './context/CountryContext';
 
 function CountryPicker() {
-    const { country, setCountry, availableCountreis } = useContext(CountryContext);
+    const { setCountry, availableCountreis } = useContext(CountryContext);
 
     const options = availableCountreis.map((item, i) => {
         return <option key={ i } value={ item }>{ item }</option>
@@ -14,9 +14,9 @@ function CountryPicker() {
     }
 
     return (
-        <div className="row">
+        <div className="row mt-3">
             <select className="custom-select" onChange={ handleSelect }>
-                <option defaultValue></option>
+                <option defaultValue value="">Total</option>
                 { options }
             </select>
         </div>
