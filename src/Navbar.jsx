@@ -1,4 +1,5 @@
 import React from 'react';
+import CountryPicker from './CountryPicker';
 
 function Navbar() {
     return (
@@ -7,6 +8,7 @@ function Navbar() {
                 <img src="https://i.ibb.co/7QpKsCX/image.png" height="30" className="d-inline-block align-top" alt=""/>
                 <span className="ml-3">Tracker</span>
             </a>
+            <CountryPicker />
         </nav>
     );
 }

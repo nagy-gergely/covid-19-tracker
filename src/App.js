@@ -3,21 +3,27 @@ import React from 'react';
 import CountryProvider from './context/CountryContext';
 
 import Navbar from './Navbar';
-import CountryPicker from './CountryPicker';
 import Cards from './Cards';
-import Chart from './Chart';
+import TotalChart from './TotalChart';
 
 function App() {
     return (
         <React.Fragment>
+            <CountryProvider>
             <Navbar />
-            <div className="container">
-                <CountryProvider>
-                    <CountryPicker />
-                    <Cards />
-                    <Chart />
-                </CountryProvider>
-            </div>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <Cards />
+                            <TotalChart />
+                        </div>
+                        <div className="col-md-6">
+                            <Cards />
+                            <TotalChart />
+                        </div>
+                    </div>
+                </div>
+            </CountryProvider>
         </React.Fragment>
     );
 }

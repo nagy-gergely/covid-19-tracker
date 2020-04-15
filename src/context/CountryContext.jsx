@@ -5,7 +5,7 @@ export const CountryContext = React.createContext();
 
 function CountryProvider({ children }) {
     const [availableCountreis, setAvailableCountreis] = useState([]);
-    const [country, setCountry] = useState();
+    const [country, setCountry] = useState('Hungary');
 
     useEffect(() => {
         axios.get('https://covid19.mathdro.id/api/countries')

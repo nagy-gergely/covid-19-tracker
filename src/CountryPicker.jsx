@@ -3,10 +3,10 @@ import React, { useContext } from 'react';
 import { CountryContext } from './context/CountryContext';
 
 function CountryPicker() {
-    const { setCountry, availableCountreis } = useContext(CountryContext);
+    const { country, setCountry, availableCountreis } = useContext(CountryContext);
 
     const options = availableCountreis.map((item, i) => {
-        return <option key={ i } value={ item }>{ item }</option>
+        return <option key={ i } value={ item } >{ item }</option>
     });
 
     const handleSelect = (event) => {
@@ -14,9 +14,8 @@ function CountryPicker() {
     }
 
     return (
-        <div className="row mt-3">
-            <select className="custom-select" onChange={ handleSelect }>
-                <option defaultValue value="">Total</option>
+        <div className="row mr-3">
+            <select className="custom-select" onChange={ handleSelect } value={ country }>
                 { options }
             </select>
         </div>
